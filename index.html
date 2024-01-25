@@ -9,8 +9,8 @@
     <body>
         <header class="header">
             <hgroup class="header__title-box">
-                <h1 class="header__title">Flutter Web-View App Test Site</h1>
-                <p class="header__title-desc">The testing area of the interactions of the Web-View App made by Flutter.</p>
+                <h1 class="header__title">Flutter «Web-View App» Test Site</h1>
+                <p class="header__title-desc">The testing area of the interactions of the «Web-View App» made by Flutter.</p>
             </hgroup>
         </header>
 
@@ -32,8 +32,122 @@
 
             <section class="section">
                 <h2 class="section__title">Section #2</h2>
-                <div class="section__content">
-                    <p class="section__text">Some content for the Section #2</p>
+                <div class="section__content">                   
+                    <form class="form">
+                        <header class="form__header">
+                            <hgroup class="form__title-box">
+                                <h3 class="form__title">Form inside the Section #2</h3>
+                                <p class="form__title-desc">Form for testing injection of some additional elements from the «Web-View App»</p>
+                            </hgroup>
+                        </header>
+
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Text input</legend>
+                            <label class="form__label">
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    name="f-input"
+                                    placeholder="Input something...">
+                            </label>
+                            <div class="form__btns-box">
+                                <button
+                                    class="form__btn"
+                                    type="button"
+                                    title="Get value from input"
+                                    aria-albel="Get value from input"
+                                >Get</button>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form__fieldset">
+                            <legend class="form__legend">Radios and Checkboxes</legend>
+                            
+                            <div class="form__controls">
+                                <ul class="controls">
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="radio" name="f-radio" checked>
+                                            <strong class="controls__ctrl-label">Rad-1</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="radio" name="f-radio">
+                                            <strong class="controls__ctrl-label">Rad-2</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="radio" name="f-radio">
+                                            <strong class="controls__ctrl-label">Rad-3</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="radio" name="f-radio">
+                                            <strong class="controls__ctrl-label">Rad-4</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="radio" name="f-radio">
+                                            <strong class="controls__ctrl-label">Rad-5</strong>
+                                        </label>
+                                    </li>
+                                </ul>
+
+                                <ul class="controls">
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="checkbox" name="f-checks[1]" checked>
+                                            <strong class="controls__ctrl-label">Chbox-1</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="checkbox" name="f-checks[2]">
+                                            <strong class="controls__ctrl-label">Chbox-2</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="checkbox" name="f-checks[3]">
+                                            <strong class="controls__ctrl-label">Chbox-3</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="checkbox" name="f-checks[4]">
+                                            <strong class="controls__ctrl-label">Chbox-4</strong>
+                                        </label>
+                                    </li>
+                                    <li class="controls__item">
+                                        <label class="controls__ctrl">
+                                            <input class="controls__ctrl-input" type="checkbox" name="f-checks[5]">
+                                            <strong class="controls__ctrl-label">Chbox-5</strong>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </fieldset>
+
+                        <footer class="form__footer">
+                            <button
+                                class="form__btn"
+                                type="submit"
+                                title="Get all form values"
+                                aria-label="Get all form values"
+                            >Get all</button>
+
+                            <button
+                                class="form__btn"
+                                type="reset"
+                                title="Reset all form values"
+                                aria-label="Reset all form values"
+                            >Reset</button>
+                        </footer>
+                    </form>
                 </div>
             </section>
 
