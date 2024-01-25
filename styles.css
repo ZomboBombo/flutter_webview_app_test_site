@@ -2,12 +2,17 @@
     /* Colors */
     --col-def-black: hsl(0 0% 0%);
     --col-def-white: hsl(0 0% 100%);
-    --col-section-3n-2: hsl(33 100% 50%);
-    --col-section-3n-1: hsl(150 100% 50%);
-    --col-section-3n: hsl(300 76.1% 72.2%);
+    --col-danger: hsl(0 67.9% 41.6%);
+    --col-section-bg: hsl(0 0% 50%);
+    --col-section-brd: hsl(0 0% 35%);
+    --col-form-bg: hsl(260 59.8% 64.9%);
+    --col-form-brd: hsl(260 59.8% 49.9%);
 
     /* Gaps */
-    --box-gap: 2rem;
+    --gap-box: 2rem;
+
+    /* Transition */
+    --trans-def-dur: 0.15s;
 
     font-size: 62.5%;
 }
@@ -46,9 +51,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: var(--box-gap);
+    padding: var(--gap-box);
     background-color: var(--col-def-white);
-    border-radius: var(--box-gap);
+    border-radius: var(--gap-box);
 }
 
 .header__title {
@@ -71,9 +76,9 @@ body {
     flex-direction: column;
     row-gap: 2.4rem;
     margin: 0;
-    padding: var(--box-gap);
+    padding: var(--gap-box);
     background-color: var(--col-def-white);
-    border-radius: var(--box-gap);
+    border-radius: var(--gap-box);
 }
 /* ==================== .main [END] ==================== */
 
@@ -82,21 +87,28 @@ body {
 .section {
     display: flex;
     flex-direction: column;
+    row-gap: 1.2rem;
     margin: 0;
-    padding: var(--box-gap);
-    border-radius: var(--box-gap);
+    padding: var(--gap-box);
+    background-color: var(--col-section-bg);
+    border: 0.2rem solid var(--col-section-brd);
+    border-radius: var(--gap-box);
+    box-shadow: 0 0 2rem 0 var(--col-section-brd);
 }
 
 .section:nth-child(3n - 2) {
-    background-color: var(--col-section-3n-2);
+    --col-section-bg: hsl(33 100% 50%);
+    --col-section-brd: hsl(33 100% 35%);
 }
 
 .section:nth-child(3n - 1) {
-    background-color: var(--col-section-3n-1);
+    --col-section-bg: hsl(150 100% 50%);
+    --col-section-brd: hsl(150 100% 35%);
 }
 
 .section:nth-child(3n) {
-    background-color: var(--col-section-3n);
+    --col-section-bg: hsl(300 76.1% 72.2%);
+    --col-section-brd: hsl(300 76.1% 57.2%);
 }
 
 .section__title {
@@ -137,11 +149,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--col-def-black);
-    border-radius: var(--box-gap);
+    border-radius: var(--gap-box);
     box-shadow: 0 0 2rem 0 var(--col-def-black);
     cursor: pointer;
     transition-property: scale, box-shadow;
-    transition-duration: 0.15s;
+    transition-duration: var(--trans-def-dur);
     transition-timing-function: ease;
 }
 
@@ -156,8 +168,8 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    border-top-right-radius: var(--box-gap);
-    border-top-left-radius: var(--box-gap);
+    border-top-right-radius: var(--gap-box);
+    border-top-left-radius: var(--gap-box);
 }
 
 .figure__caption {
@@ -168,3 +180,170 @@ body {
     border-top: 1px solid var(--col-def-white);
 }
 /* ==================== .figure [END] ==================== */
+
+
+/* ==================== .form [START] ==================== */
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    margin: 0;
+    padding: var(--gap-box);
+    background-color: var(--col-form-bg);
+    border: 1px solid var(--col-form-brd);
+    border-radius: var(--gap-box);
+}
+
+.form__header {
+    margin: 0;
+    margin-bottom: 1.8rem;
+    padding: 0;
+}
+
+.form__title {
+    margin: 0;
+    padding: 0;
+    font-size: 4.8rem;
+    text-transform: uppercase;
+}
+
+.form__title-desc {
+    margin: 0;
+    padding: 0;
+    font-size: 3.2rem;
+}
+
+.form__fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    border-color: var(--col-form-brd);
+    border-radius: 0.4rem;
+}
+
+.form__legend {
+    padding: 0.6rem;
+    color: var(--col-def-white);
+    background-color: var(--col-form-brd);
+    border-radius: 0.4rem;
+}
+
+.form__input {
+    margin: 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 2.4rem;
+    border: 1px solid var(--col-form-brd);
+    border-radius: 0.4rem;
+}
+
+.form__btns-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    width: auto;
+    max-width: 48rem;
+}
+
+.form__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: var(--col-def-white);
+    background-color: var(--col-form-brd);
+    border: 2px solid var(--col-form-brd);
+    border-radius: 2.4rem;
+    outline: 2px solid var(--col-form-bg);
+    outline-offset: -4px;
+    cursor: pointer;
+    transition-property: background-color, opacity;
+    transition-duration: var(--trans-def-dur);
+    transition-timing-function: ease;
+}
+
+.form__btn:where(:hover, :focus-visible) {
+    background-color: var(--col-form-bg);
+}
+
+.form__btn:active {
+    opacity: 0.5;
+}
+
+.form__btn[type="submit"] {
+    font-size: 3.2rem;
+}
+
+.form__btn[type="reset"] {
+    --col-form-bg: hsl(0 67.9% 56.6%);
+    --col-form-brd: hsl(0 67.9% 41.6%);
+
+    font-size: 3.2rem;    
+}
+
+.form__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12.8rem;
+}
+
+.form__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.4rem;
+}
+/* ===================== .form [END] ===================== */
+
+
+/* ================== .controls [START] ================== */
+.controls {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.controls__ctrl {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+    margin: 0;
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    outline: 2px solid var(--col-form-bg);
+    outline-offset: -4px;
+    cursor: pointer;
+    transition-property: background-color, opacity;
+    transition-duration: var(--trans-def-dur);
+    transition-timing-function: ease;
+}
+
+.controls__ctrl:where(:hover, :focus-visible) {
+    background-color: var(--col-form-brd);
+}
+
+.controls__ctrl:active {
+    opacity: 0.5;
+}
+
+.controls__ctrl-input {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0;
+    padding: 0;
+}
+
+.controls__ctrl-label {
+    margin: 0;
+    padding: 0;
+    font-size: 3.2rem;
+}
+/* =================== .controls [END] =================== */
