@@ -131,7 +131,7 @@ body {
 
 .section__pics-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
     gap: 1.2rem;
     margin: 0;
     padding: 0;
@@ -200,10 +200,16 @@ body {
     padding: 0;
 }
 
+.form__title-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+}
+
 .form__title {
     margin: 0;
     padding: 0;
-    font-size: 4.8rem;
+    font-size: clamp(2.4rem, 2.5vw, 4.8rem);
     text-transform: uppercase;
 }
 
@@ -211,6 +217,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 3.2rem;
+    font-size: clamp(1.2rem, 2.5vw, 3.2rem);
 }
 
 .form__fieldset {
@@ -232,7 +239,7 @@ body {
 .form__input {
     margin: 0;
     padding: 0.4rem 0.8rem;
-    font-size: 2.4rem;
+    font-size: clamp(1.2rem, 2.5vw, 2.4rem);
     border: 1px solid var(--col-form-brd);
     border-radius: 0.4rem;
 }
@@ -290,13 +297,20 @@ body {
     flex-wrap: wrap;
     align-items: center;
     gap: 12.8rem;
+    gap: clamp(3.2rem, 6.65vw, 12.8rem);
 }
 
 .form__footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 2.4rem;
+}
+
+@media screen and (max-width: 767px) {
+    .form__footer {
+        display: flex;
+        flex-direction: column;
+    }
 }
 /* ===================== .form [END] ===================== */
 
@@ -335,6 +349,8 @@ body {
 }
 
 .controls__ctrl-input {
+    /* width: clamp(1.2rem, 2.5vw, 2.4rem);
+    height: clamp(1.2rem, 2.5vw, 2.4rem); */
     width: 2.4rem;
     height: 2.4rem;
     margin: 0;
@@ -344,6 +360,6 @@ body {
 .controls__ctrl-label {
     margin: 0;
     padding: 0;
-    font-size: 3.2rem;
+    font-size: clamp(2.4rem, 1.85vw, 3.6rem);
 }
 /* =================== .controls [END] =================== */
